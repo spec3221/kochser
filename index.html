@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KochBratanTeam · Minecraft Сервер</title>
-<meta name="description" content="KochBratanTeam — ламповый сервер Minecraft с честным выживанием, развитой экономикой, кланами, ивентами и дружным комьюнити.">
+<title>KochBratanTeam · Официальный сайт Minecraft-сервера & Сообщества</title>
+<meta name="description" content="KochBratanTeam — ламповый сервер Minecraft с честным выживанием, развитой экономикой, кланами, ивентами и дружным Discord-сообществом.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="KochBratanTeam · Minecraft Сервер">
-<meta property="og:description" content="Выживание, кланы, кастомные ивенты и донат-привилегии. Залетай играть вместе с нами!">
+<meta property="og:title" content="KochBratanTeam · Minecraft Сервер & Сообщество">
+<meta property="og:description" content="Честное выживание, кланы, кастомные ивенты и донат-привилегии. Присоединяйся к нашему Discord и залетай в игру!">
 <meta name="theme-color" content="#d3173a">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23d3173a' d='M16 2 L2 9 L2 23 L16 30 L30 23 L30 9 Z'/%3E%3Cpath fill='%23ff5a7a' d='M16 2 L30 9 L16 16 L2 9 Z'/%3E%3Cpath fill='%23fff' opacity='.3' d='M16 16 L30 9 L30 23 L16 30 Z'/%3E%3C/svg%3E">
 
@@ -33,6 +33,7 @@
   --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --mc-green: #2ecc71;
   --mc-gold: #f39c12;
+  --discord-blurple: #5865F2;
 }
 
 *, *::before, *::after {
@@ -116,15 +117,15 @@ body {
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
   transition: box-shadow 0.3s, background 0.3s;
 }
 .nav.scrolled {
-  box-shadow: 0 8px 24px rgba(120, 10, 30, 0.06);
-  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 24px rgba(120, 10, 30, 0.08);
+  background: rgba(255, 255, 255, 0.96);
 }
 .nav-in {
   max-width: 1160px;
@@ -170,16 +171,19 @@ body {
 .links {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 .links a {
-  padding: 8px 14px;
-  font-size: 15px;
+  padding: 8px 12px;
+  font-size: 14.5px;
   font-weight: 600;
   color: var(--muted);
   text-decoration: none;
   border-radius: 10px;
   transition: color 0.25s, background 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 .links a:hover {
   color: var(--red);
@@ -194,6 +198,7 @@ body {
   background: linear-gradient(135deg, var(--rose), var(--red) 55%, var(--red2)) !important;
   box-shadow: 0 6px 18px rgba(211, 23, 58, 0.25);
   font-weight: 700 !important;
+  padding: 8px 16px !important;
 }
 .nav-join:hover {
   box-shadow: 0 8px 22px rgba(211, 23, 58, 0.35);
@@ -227,7 +232,7 @@ body {
   min-height: 48px;
   padding: 10px 22px;
   border-radius: 14px;
-  font-size: 15.5px;
+  font-size: 15px;
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
@@ -282,6 +287,15 @@ body {
   box-shadow: 0 10px 24px rgba(211, 23, 58, 0.12);
   transform: translateY(-2px);
 }
+.discord-btn {
+  color: #fff;
+  background: linear-gradient(135deg, #7289da, var(--discord-blurple));
+  box-shadow: 0 8px 22px rgba(88, 101, 242, 0.28);
+}
+.discord-btn:hover {
+  box-shadow: 0 12px 28px rgba(88, 101, 242, 0.4);
+  transform: translateY(-2px);
+}
 .soft-btn {
   color: var(--red2);
   background: var(--soft);
@@ -320,7 +334,7 @@ body {
 }
 .banner {
   position: relative;
-  min-height: 280px;
+  min-height: 290px;
   border-radius: 24px;
   overflow: hidden;
   background: linear-gradient(145deg, #2a0b14, #530d1d 60%, #170408);
@@ -328,6 +342,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 30px 20px;
 }
 .banner-grid {
   position: absolute;
@@ -348,55 +363,49 @@ body {
 }
 .chip {
   position: absolute;
-  top: 18px;
-  left: 18px;
-  z-index: 2;
+  top: 20px;
+  left: 24px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 6px 14px;
   border-radius: 99px;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(10px);
-  color: #fff;
   font-size: 13px;
   font-weight: 700;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
 }
 .chip-dot {
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: var(--mc-green);
-  box-shadow: 0 0 10px 2px var(--mc-green);
-  animation: pulseDot 2s ease-in-out infinite;
+  background: #2ecc71;
+  box-shadow: 0 0 10px #2ecc71;
+  animation: pulse 2s infinite;
 }
-@keyframes pulseDot {
+@keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
+  50% { opacity: 0.5; transform: scale(0.85); }
 }
-
 .chip-ver {
   position: absolute;
-  top: 18px;
-  right: 18px;
-  z-index: 2;
-  padding: 6px 14px;
-  border-radius: 99px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  color: #fff;
+  top: 20px;
+  right: 24px;
   font-size: 13px;
   font-weight: 700;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 6px 14px;
+  border-radius: 99px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .hero-art-title {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 40px 20px;
-  color: #fff;
 }
 .hero-art-title h1 {
   font-size: clamp(34px, 5.5vw, 56px);
@@ -409,12 +418,13 @@ body {
   -webkit-text-fill-color: transparent;
 }
 .hero-art-title p {
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: clamp(15px, 2.2vw, 18px);
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 580px;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.45;
 }
 
 /* Profile Card / Server Control Strip */
@@ -445,7 +455,7 @@ body {
 .server-details {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 .server-title-row {
   display: flex;
@@ -484,7 +494,7 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 6px;
+  margin-top: 4px;
   background: var(--bg);
   padding: 8px 14px;
   border-radius: 12px;
@@ -524,15 +534,84 @@ body {
 .cta {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   DISCORD CHANNELS QUICK HUB
+   ========================================================================== */
+.discord-hub {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.dh-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: var(--shadow);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s, border-color 0.3s;
+}
+.dh-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--line2);
+  box-shadow: var(--shadow-lg);
+}
+.dh-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  flex: none;
+  background: var(--soft);
+  color: var(--red);
+  border: 1px solid var(--line);
+  transition: transform 0.4s var(--spring);
+}
+.dh-card:hover .dh-icon {
+  transform: scale(1.1) rotate(-6deg);
+}
+.dh-news .dh-icon { background: #fff0f3; color: var(--red); }
+.dh-sugg .dh-icon { background: #fff9e6; color: #b7791f; }
+.dh-comm .dh-icon { background: #eef0fd; color: var(--discord-blurple); }
+.dh-info b {
+  display: block;
+  font-size: 15.5px;
+  font-weight: 800;
+}
+.dh-info span {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.dh-arrow {
+  margin-left: auto;
+  font-size: 18px;
+  color: var(--muted);
+  transition: transform 0.3s, color 0.3s;
+}
+.dh-card:hover .dh-arrow {
+  color: var(--red);
+  transform: translateX(4px);
 }
 
 /* ==========================================================================
    SECTIONS GENERAL
    ========================================================================== */
 section {
-  margin-top: 88px;
-  scroll-margin-top: 88px;
+  margin-top: 84px;
+  scroll-margin-top: 84px;
 }
 .sec-head {
   display: flex;
@@ -567,8 +646,8 @@ h2 {
 }
 .sub {
   color: var(--muted);
-  font-size: 16px;
-  max-width: 440px;
+  font-size: 15.5px;
+  max-width: 480px;
 }
 
 /* ==========================================================================
@@ -610,7 +689,7 @@ h2 {
 
 .art {
   position: relative;
-  height: 154px;
+  height: 150px;
   border-radius: 14px;
   overflow: hidden;
   display: grid;
@@ -649,7 +728,7 @@ h2 {
   height: 88px;
   display: grid;
   place-items: center;
-  font-size: 54px;
+  font-size: 52px;
   animation: float 4s ease-in-out infinite;
   transition: transform 0.6s var(--spring);
 }
@@ -670,9 +749,9 @@ h2 {
   box-shadow: 0 0 12px 3px rgba(255, 255, 255, 0.9);
   animation: twinkle 3s ease-in-out infinite;
 }
-.spark.s1 { top: 26px; left: 20%; }
-.spark.s2 { bottom: 22px; right: 20%; animation-delay: -1.4s; width: 7px; height: 7px; }
-.spark.s3 { top: 32px; right: 18%; animation-delay: -0.7s; width: 6px; height: 6px; }
+.spark.s1 { top: 24px; left: 20%; }
+.spark.s2 { bottom: 20px; right: 20%; animation-delay: -1.4s; width: 7px; height: 7px; }
+.spark.s3 { top: 30px; right: 18%; animation-delay: -0.7s; width: 6px; height: 6px; }
 @keyframes twinkle {
   0%, 100% { opacity: 0.25; transform: scale(0.8); }
   50% { opacity: 1; transform: scale(1.1); }
@@ -681,8 +760,8 @@ h2 {
 .tag {
   position: absolute;
   z-index: 2;
-  top: 18px;
-  left: 18px;
+  top: 16px;
+  left: 16px;
   font-size: 11.5px;
   font-weight: 800;
   letter-spacing: 0.6px;
@@ -695,7 +774,7 @@ h2 {
 }
 
 .rbody {
-  padding: 16px 8px 0;
+  padding: 16px 6px 0;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -711,7 +790,7 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--muted);
   flex: 1;
 }
@@ -735,7 +814,7 @@ h2 {
   border-top: 1px dashed var(--line);
 }
 .price b {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 800;
   color: var(--ink);
   letter-spacing: -0.6px;
@@ -743,27 +822,27 @@ h2 {
 .price em {
   font-style: normal;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13.5px;
 }
 .price s {
   margin-left: auto;
-  font-size: 14px;
+  font-size: 13.5px;
   color: #9a8288;
 }
 .off {
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 800;
   color: #fff;
   background: var(--ink);
-  padding: 2px 8px;
+  padding: 2px 7px;
   border-radius: 99px;
-  margin-left: 8px;
+  margin-left: 6px;
   align-self: center;
 }
 .role .btn {
   margin-top: 14px;
-  min-height: 46px;
-  font-size: 15px;
+  min-height: 44px;
+  font-size: 14.5px;
   border-radius: 12px;
 }
 
@@ -865,7 +944,7 @@ h2 {
 }
 .timer span {
   display: block;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
   line-height: 1.1;
@@ -877,7 +956,7 @@ h2 {
   from { transform: translateY(-6px); opacity: 0.3; }
 }
 .timer small {
-  font-size: 11.5px;
+  font-size: 11px;
   opacity: 0.88;
 }
 
@@ -902,7 +981,7 @@ h2 {
 .steps li {
   display: flex;
   gap: 12px;
-  font-size: 14.5px;
+  font-size: 14px;
   color: var(--muted);
   counter-increment: s;
 }
@@ -918,8 +997,7 @@ h2 {
   font-weight: 800;
   color: var(--red);
   background: var(--soft);
-  border: 1px solid var(--line);
-}
+  border: 1px solid var(--line);}
 .steps b {
   color: var(--text);
 }
@@ -941,77 +1019,49 @@ h2 {
   padding: 22px;
   transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease), border-color 0.4s;
 }
-.f::after {
-  content: "";
-  position: absolute;
-  inset: auto -40% -60% auto;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 90, 122, 0.16), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.45s var(--ease);
-}
 .f:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow);
+  transform: translateY(-4px);
   border-color: var(--line2);
-}
-.f:hover::after {
-  opacity: 1;
+  box-shadow: var(--shadow);
 }
 .f .ic {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--soft);
   display: grid;
   place-items: center;
-  color: #fff;
-  background: linear-gradient(145deg, var(--a), var(--b));
-  box-shadow: 0 10px 20px -6px var(--b), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  color: var(--red);
   margin-bottom: 14px;
-  transition: transform 0.55s var(--spring);
-}
-.f:hover .ic {
-  transform: rotate(-10deg) scale(1.12);
+  border: 1px solid var(--line);
 }
 .f .ic svg {
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   fill: none;
   stroke: currentColor;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.18));
 }
-
-.f:nth-child(1) .ic { --a: #ff8aa5; --b: #e0234d; }
-.f:nth-child(2) .ic { --a: #a78bfa; --b: #6d3fe0; }
-.f:nth-child(3) .ic { --a: #7fd36b; --b: #2f8f3a; }
-.f:nth-child(4) .ic { --a: #ffa155; --b: #ea5a0c; }
-.f:nth-child(5) .ic { --a: #6fc3ff; --b: #2563eb; }
-.f:nth-child(6) .ic { --a: #ff7a8f; --b: #be123c; }
-.f:nth-child(7) .ic { --a: #ffd166; --b: #d98a00; }
-.f:nth-child(8) .ic { --a: #5eead4; --b: #0d9488; }
-
 .f b {
   display: block;
-  font-size: 16.5px;  font-weight: 800;
+  font-size: 16.5px;
+  font-weight: 800;
   margin-bottom: 4px;
 }
 .f span {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13.5px;
   line-height: 1.4;
 }
 
 /* ==========================================================================
-   MINECRAFT RULES SECTION (TABS)
+   OFFICIAL RULES SECTION (DISCORD COMMUNITY RULES)
    ========================================================================== */
 .rules-intro {
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   gap: 16px;
 }
 .ri-main {
@@ -1047,9 +1097,10 @@ h2 {
 }
 .ri-main p {
   color: var(--muted);
-  font-size: 15.5px;
+  font-size: 15px;
   margin-top: 10px;
   max-width: 640px;
+  line-height: 1.5;
 }
 .ri-main .ri-note {
   color: var(--text);
@@ -1059,6 +1110,7 @@ h2 {
   border-radius: 12px;
   padding: 12px 14px;
   margin-top: 16px;
+  font-size: 14px;
 }
 
 .ri-alert {
@@ -1095,8 +1147,8 @@ h2 {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .ri-alert b {
-  font-size: 16.5px;
-  line-height: 1.4;
+  font-size: 16px;
+  line-height: 1.45;
   position: relative;
   z-index: 1;
 }
@@ -1131,7 +1183,7 @@ h2 {
   border-radius: 10px;
   background: transparent;
   font: inherit;
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 700;
   color: var(--muted);
   cursor: pointer;
@@ -1139,7 +1191,7 @@ h2 {
 }
 .rtab i {
   font-style: normal;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 800;
   min-width: 22px;
   height: 22px;
@@ -1222,13 +1274,13 @@ h2 {
 }
 .rule b {
   display: block;
-  font-size: 16px;
+  font-size: 15.5px;
 }
 .rule p {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13.5px;
   margin-top: 4px;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 /* Punishment severity pills */
@@ -1237,7 +1289,7 @@ h2 {
   align-items: center;
   gap: 6px;
   margin-top: 10px;
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 700;
   padding: 5px 11px;
   border-radius: 99px;
@@ -1274,7 +1326,7 @@ h2 {
   padding: 16px 14px 18px;
   border-radius: 14px;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 14.5px;
   line-height: 1.3;
   color: #fff;
   background: linear-gradient(160deg, hsl(calc(350 - var(--k)*2) 85% calc(76% - var(--k)*8%)), hsl(calc(348 - var(--k)*2) 80% calc(62% - var(--k)*8%)));
@@ -1291,6 +1343,17 @@ h2 {
   opacity: 0.85;
   margin-bottom: 8px;
 }
+.rp-lead {
+  font-size: 15px;
+  color: var(--text);
+  font-weight: 600;
+}
+.rp-foot {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 14px;
+  line-height: 1.45;
+}
 
 .rules-end {
   margin-top: 22px;
@@ -1305,7 +1368,7 @@ h2 {
 }
 .rules-end p {
   color: var(--muted);
-  font-size: 15.5px;
+  font-size: 15px;
   margin-top: 8px;
 }
 .rules-end p b {
@@ -1333,7 +1396,7 @@ h2 {
 }
 
 /* ==========================================================================
-   TEAM SECTION
+   TEAM / STAFF SECTION
    ========================================================================== */
 .teambox {
   display: grid;
@@ -1355,12 +1418,14 @@ h2 {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 14px 10px 10px;
+  padding: 12px 14px;
   border-radius: 14px;
   background: var(--bg);
   border: 1px solid var(--line);
   font-size: 15px;
   font-weight: 700;
+  text-decoration: none;
+  color: var(--text);
   transition: all 0.3s;
 }
 .mem-avatar {
@@ -1389,7 +1454,14 @@ h2 {
   display: block;
   font-weight: 500;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 12.5px;
+}
+.mem-link-pill {
+  display: inline-block;
+  margin-top: 3px;
+  font-size: 11px;
+  color: var(--red);
+  font-weight: 700;
 }
 
 .apply {
@@ -1404,8 +1476,9 @@ h2 {
 }
 .apply p {
   color: var(--muted);
-  font-size: 14.5px;
+  font-size: 14px;
   margin-top: 6px;
+  line-height: 1.45;
 }
 .apply .btn {
   margin-top: 14px;
@@ -1583,18 +1656,19 @@ footer {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 .flink {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 8px 16px;
+  gap: 6px;
+  min-height: 42px;
+  padding: 8px 14px;
   border-radius: 12px;
   color: var(--red);
   text-decoration: none;
   font-weight: 700;
+  font-size: 14px;
   transition: all 0.3s var(--ease);
 }
 .flink:hover {
@@ -1698,6 +1772,9 @@ footer {
   .ladder {
     grid-template-columns: repeat(2, 1fr);
   }
+  .discord-hub {
+    grid-template-columns: 1fr;
+  }
   .sign {
     justify-self: start;
     text-align: left;
@@ -1788,7 +1865,7 @@ footer {
   }
   .rtab {
     flex: 1 1 45%;
-    font-size: 14px;
+    font-size: 13.5px;
     padding: 8px 10px;
   }
   footer {
@@ -1835,11 +1912,13 @@ footer {
 
     <nav class="links" id="menu">
       <a href="#about">О сервере</a>
+      <a href="https://discord.com/channels/1535356137845690469/1546140945278443541" target="_blank" rel="noopener noreferrer">📢 Новости</a>
+      <a href="https://discord.com/channels/1535356137845690469/1546095135576559767" target="_blank" rel="noopener noreferrer">💡 Предложения</a>
       <a href="#donate">Донат</a>
       <a href="#features">Фичи</a>
       <a href="#rules">Правила</a>
       <a href="#team">Команда</a>
-      <a class="nav-join" href="https://discord.gg/kochbratan" target="_blank" rel="noopener noreferrer">Discord-сообщество ↗</a>
+      <a class="nav-join" href="https://discord.gg/btyGECRV9Y" target="_blank" rel="noopener noreferrer">Discord-сервер ↗</a>
     </nav>
 
     <button class="menu-toggle" id="menu-btn" type="button" aria-label="Открыть меню">
@@ -1867,7 +1946,7 @@ footer {
 
       <div class="hero-art-title">
         <h1>KochBratanTeam</h1>
-        <p>Уютный сервер Minecraft с честным выживанием, сбалансированной экономикой, войс-чатом и постоянными событиями!</p>
+        <p>Уютный сервер Minecraft с честным выживанием, сбалансированной экономикой, войс-чатом и дружным сообществом!</p>
       </div>
     </div>
 
@@ -1897,10 +1976,41 @@ footer {
 
       <div class="cta">
         <a class="btn primary" href="#donate">Выбрать донат <span class="arrow">↓</span></a>
-        <a class="btn ghost" href="#rules">Правила</a>
+        <a class="btn discord-btn" href="https://discord.gg/btyGECRV9Y" target="_blank" rel="noopener noreferrer">Наш Discord ↗</a>
       </div>
     </div>
   </section>
+
+  <!-- ==========================================================================
+       DISCORD CHANNELS QUICK HUB
+       ========================================================================== -->
+  <div class="discord-hub rv">
+    <a class="dh-card dh-news" href="https://discord.com/channels/1535356137845690469/1546140945278443541" target="_blank" rel="noopener noreferrer">
+      <div class="dh-icon">📢</div>
+      <div class="dh-info">
+        <b>Новости Minecraft</b>
+        <span>Канал анонсов и обновлений</span>
+      </div>
+      <div class="dh-arrow">↗</div>
+    </a>
+
+    <a class="dh-card dh-sugg" href="https://discord.com/channels/1535356137845690469/1546095135576559767" target="_blank" rel="noopener noreferrer">
+      <div class="dh-icon">💡</div>
+      <div class="dh-info">        <b>Предложения к серверу</b>
+        <span>Твои идеи для проекта</span>
+      </div>
+      <div class="dh-arrow">↗</div>
+    </a>
+
+    <a class="dh-card dh-comm" href="https://discord.gg/btyGECRV9Y" target="_blank" rel="noopener noreferrer">
+      <div class="dh-icon">💬</div>
+      <div class="dh-info">
+        <b>Discord-сообщество</b>
+        <span>Присоединяйся к общению</span>
+      </div>
+      <div class="dh-arrow">↗</div>
+    </a>
+  </div>
 
   <!-- ==========================================================================
        DONATE / ROLES SHOP SECTION
@@ -1933,13 +2043,12 @@ footer {
               <li>До 3 регионов привата (по 80k блоков)</li>
               <li>Золотой цвет ника в табе и чате</li>
             </ul>
-            <!-- Цены легко настраиваются: измените цифры в <b> и <s> -->
             <div class="price">
               <b>79 ₽</b><em>навсегда</em>
               <s>149 ₽</s>
               <span class="off">−47%</span>
             </div>
-            <button class="btn ghost donate-trigger" type="button" data-rank="VIP" data-price="79" data-oldprice="149" data-icon="⭐">
+            <button class="btn ghost donate-trigger" type="button" data-rank="VIP" data-price="79" data-icon="⭐">
               Приобрести <span class="arrow">→</span>
             </button>
           </div>
@@ -1961,13 +2070,12 @@ footer {
               <li>Команды <b>/heal</b>, <b>/near</b>, <b>/ptime</b></li>
               <li>5 регионов привата и 6 точек дома</li>
             </ul>
-            <!-- Цены легко настраиваются -->
             <div class="price">
               <b>169 ₽</b><em>навсегда</em>
               <s>299 ₽</s>
               <span class="off">−43%</span>
             </div>
-            <button class="btn ghost donate-trigger" type="button" data-rank="PREMIUM" data-price="169" data-oldprice="299" data-icon="💎">
+            <button class="btn ghost donate-trigger" type="button" data-rank="PREMIUM" data-price="169" data-icon="💎">
               Приобрести <span class="arrow">→</span>
             </button>
           </div>
@@ -1990,18 +2098,18 @@ footer {
               <li>8 регионов привата и 10 точек дома</li>
               <li>Вход на переполненный сервер</li>
             </ul>
-            <!-- Цены легко настраиваются -->
             <div class="price">
               <b>349 ₽</b><em>навсегда</em>
               <s>599 ₽</s>
               <span class="off">−42%</span>
             </div>
-            <button class="btn ghost donate-trigger" type="button" data-rank="SPONSOR" data-price="349" data-oldprice="599" data-icon="👑">              Приобрести <span class="arrow">→</span>
+            <button class="btn ghost donate-trigger" type="button" data-rank="SPONSOR" data-price="349" data-icon="👑">
+              Приобрести <span class="arrow">→</span>
             </button>
           </div>
         </article>
 
-        <!-- DELUXE / ВЛАДЕЛЕЦ -->
+        <!-- DELUXE -->
         <article class="role custom rv tilt">
           <div class="art">
             <span class="tag">Максимум</span>
@@ -2018,13 +2126,12 @@ footer {
               <li>Бесплатные кейсы каждый месяц</li>
               <li>Личная роль и скрытый чат в Discord</li>
             </ul>
-            <!-- Цены легко настраиваются -->
             <div class="price">
               <b>699 ₽</b><em>навсегда</em>
               <s>1299 ₽</s>
               <span class="off">−46%</span>
             </div>
-            <button class="btn ghost donate-trigger" type="button" data-rank="DELUXE" data-price="699" data-oldprice="1299" data-icon="🔥">
+            <button class="btn ghost donate-trigger" type="button" data-rank="DELUXE" data-price="699" data-icon="🔥">
               Приобрести <span class="arrow">→</span>
             </button>
           </div>
@@ -2112,15 +2219,15 @@ footer {
           <svg viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>
         </div>
         <b>Голосовой чат</b>
-        <span>Поддержка Simple Voice Chat для позиционного 3D-общения прямо в игре.</span>
+        <span>Simple Voice Chat для позиционного 3D-общения прямо в игре.</span>
       </div>
 
       <div class="f rv">
         <div class="ic">
           <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m12 13 1.1 2.2 2.4.3-1.8 1.6.5 2.4-2.2-1.2-2.2 1.2.5-2.4-1.8-1.6 2.4-.3z"/></svg>
         </div>
-        <b>Ивенты и боссы</b>
-        <span>Еженедельные турниры, дуэли, квесты и кастомные подземелья.</span>
+        <b>Ивенты и турниры</b>
+        <span>Регулярные турниры, квесты и конкурсы с призами в Discord.</span>
       </div>
 
       <div class="f rv">
@@ -2128,7 +2235,7 @@ footer {
           <svg viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </div>
         <b>Стабильный TPS 20.0</b>
-        <span>Мощный выделенный сервер без просадок и телепортов при высоком онлайне.</span>
+        <span>Мощный выделенный сервер без лагов и фризов при онлайне.</span>
       </div>
 
       <div class="f rv">
@@ -2136,226 +2243,225 @@ footer {
           <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <b>Дружное комьюнити</b>
-        <span>Адекватная взрослая администрация и активный Discord-сервер 24/7.</span>
+        <span>Адекватная взрослая администрация и активный Discord 24/7.</span>
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       RULES SECTION (TABS)
+       RULES SECTION (OFFICIAL DISCORD COMMUNITY RULES)
        ========================================================================== -->
   <section id="rules">
     <div class="sec-head rv">
       <div>
         <div class="eyebrow">Порядок и безопасность</div>
-        <h2>Правила сервера KochBratanTeam</h2>
+        <h2>ПРАВИЛА СООБЩЕСТВА</h2>
       </div>
-      <p class="sub">Соблюдай правила, чтобы игра оставалась честной и приятной для каждого братана.</p>
+      <p class="sub">Правила сообщества и серверов KochBratanTeam. Соблюдай порядок и уважай окружающих!</p>
     </div>
 
     <div class="rules-intro rv">
       <div class="ri-main">
-        <span class="ri-kicker">🛡️ Кодекс игрока</span>
-        <h3>Добро пожаловать в мир <b>KochBratanTeam</b>!</h3>
-        <p>Мы создаём дружелюбную атмосферу для комфортного выживания. Заходя на сервер, вы автоматически соглашаетесь с правилами проекта. Нарушители наказываются без исключений.</p>
-        <p class="ri-note">・Незнание правил не освобождает от ответственности. Администрация имеет право выносить решения по ситуации.</p>
+        <span class="ri-kicker">♡ Правила сообщества</span>
+        <h3>Добро пожаловать на Discord-сервер <b>KochBratanTeam</b>! ♡</h3>
+        <p>Наш сервер создан для общения, знакомств и совместного времяпрепровождения. Мы хотим поддерживать дружелюбную и комфортную атмосферу для всех участников, поэтому просим каждого соблюдать правила и уважать окружающих.</p>
+        <p class="ri-note">・Незнание правил не освобождает от ответственности. Администрация оставляет за собой право выбирать меру наказания в зависимости от ситуации и тяжести нарушения.</p>
       </div>
       <div class="ri-alert">
         <div class="ri-ic" aria-hidden="true">🚫</div>
-        <b>Категорически запрещено использование читов, X-Ray, ботов и обход наказаний через твинки!</b>
-        <span class="pen pen-hard">⚠️ Бан по IP от 14 до 999 дней</span>
+        <b>Запрещено обходить муты, тайм-ауты, баны и другие наказания с помощью альтернативных аккаунтов.</b>
+        <span class="pen pen-hard">⚠️ Наказание: тайм-аут до 7 дней или бан</span>
       </div>
     </div>
 
     <div class="rtabs rv" id="rtabs">
       <div class="rtab-list" role="tablist" aria-label="Разделы правил сервера">
         <button class="rtab" role="tab" type="button" id="t-gen" aria-controls="p-gen" aria-selected="true">
-          <span>🤝</span> Общие <i>4</i>
+          <span>🤝</span> 1. Общие правила <i>4</i>
         </button>
-        <button class="rtab" role="tab" type="button" id="t-game" aria-controls="p-game" aria-selected="false">
-          <span>⚔️</span> Геймплей и Гриф <i>4</i>
+        <button class="rtab" role="tab" type="button" id="t-text" aria-controls="p-text" aria-selected="false">
+          <span>💬</span> 2. Текстовые каналы <i>7</i>
         </button>
-        <button class="rtab" role="tab" type="button" id="t-chat" aria-controls="p-chat" aria-selected="false">
-          <span>💬</span> Чат и Торговля <i>4</i>
-        </button>
-        <button class="rtab" role="tab" type="button" id="t-cheats" aria-controls="p-cheats" aria-selected="false">
-          <span>🛡️</span> Читы и ПО <i>3</i>
+        <button class="rtab" role="tab" type="button" id="t-voice" aria-controls="p-voice" aria-selected="false">
+          <span>🎙️</span> 3. Голосовые каналы <i>5</i>
         </button>
         <button class="rtab" role="tab" type="button" id="t-pun" aria-controls="p-pun" aria-selected="false">
-          <span>⚖️</span> Наказания
+          <span>⚖️</span> Система наказаний
         </button>
       </div>
 
-      <!-- Tab 1: Общие -->
+      <!-- Tab 1: ОБЩИЕ ПРАВИЛА -->
       <div class="rpanel" role="tabpanel" id="p-gen" aria-labelledby="t-gen">
-        <h3 class="rp-title">・1. Общие правила проекта</h3>
+        <h3 class="rp-title">・1. ОБЩИЕ ПРАВИЛА</h3>
         <div class="rgrid">
           <div class="rule">
             <span class="rn">1.1</span>
             <div>
-              <b>Уважение к игрокам</b>
-              <p>Запрещены необоснованные оскорбления, травля, разжигание межнациональной розни и провокация конфликтов.</p>
-              <span class="pen pen-mid">⚠️ Мут от 1 до 12 часов</span>
+              <b>Уважение к участникам</b>
+              <p>Запрещены оскорбления, унижения, травля, провокации конфликтов и намеренно токсичное поведение.</p>
+              <span class="pen pen-mid">⚠️ Наказание: тайм-аут от 1 часа до 1 дня</span>
             </div>
           </div>
           <div class="rule">
             <span class="rn">1.2</span>
             <div>
-              <b>Оскорбление родственников</b>
-              <p>Любые упоминания и оскорбления родных в унизительном контексте строго запрещены.</p>
-              <span class="pen pen-hard">⚠️ Мут от 24 часов до бана на 3 дня</span>
+              <b>Оскорбления родных</b>
+              <p>Запрещены оскорбления, унижения и угрозы в адрес родственников участников.</p>
+              <span class="pen pen-hard">⚠️ Наказание: тайм-аут до 7 дней</span>
             </div>
           </div>
           <div class="rule">
             <span class="rn">1.3</span>
             <div>
-              <b>Безопасность аккаунта</b>
-              <p>Запрещена передача, продажа или покупка игровых аккаунтов. Ответственность за аккаунт несёт его владелец.</p>
-              <span class="pen pen-hard">⚠️ Перманентный бан аккаунта</span>
+              <b>Дискриминация</b>
+              <p>Запрещены оскорбления и унижение людей по национальности, расе, религии, полу и другим личным признакам.</p>
+              <span class="pen pen-hard">⚠️ Наказание: тайм-аут от 1 дня до 7 дней</span>
             </div>
           </div>
           <div class="rule">
             <span class="rn">1.4</span>
             <div>
-              <b>Помеха администрации</b>
-              <p>Запрещено вводить администрацию в заблуждение, выдавать себя за персонал сервера и мешать модераторам.</p>
-              <span class="pen pen-mid">⚠️ Бан от 1 до 7 дней</span>
+              <b>Неуважение к администрации</b>
+              <p>Запрещено намеренно игнорировать законные требования администрации и мешать работе модераторов.</p>
+              <span class="pen pen-low">⚠️ Наказание: тайм-аут от 5 до 10 минут или более при повторных нарушениях</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Tab 2: Геймплей и Гриф -->
-      <div class="rpanel" role="tabpanel" id="p-game" aria-labelledby="t-game">
-        <h3 class="rp-title">・2. Игровой процесс и постройки</h3>
+      <!-- Tab 2: ПРАВИЛА ТЕКСТОВЫХ КАНАЛОВ -->
+      <div class="rpanel" role="tabpanel" id="p-text" aria-labelledby="t-text" hidden>
+        <h3 class="rp-title">・2. ПРАВИЛА ТЕКСТОВЫХ КАНАЛОВ</h3>
         <div class="rgrid">
           <div class="rule">
             <span class="rn">2.1</span>
             <div>
-              <b>Гриферство в чужих регионах</b>
-              <p>Запрещено разрушение чужих построек, заливание лавой/водой, порча ландшафта и воровство из открытых сундуков чужого привата.</p>
-              <span class="pen pen-hard">⚠️ Бан от 3 до 14 дней + откат</span>
+              <b>Спам и флуд</b>
+              <p>Запрещено отправлять большое количество одинаковых, бессмысленных сообщений, символов или эмодзи.</p>
+              <span class="pen pen-low">⚠️ Наказание: тайм-аут от 10 минут до 1 часа</span>
             </div>
           </div>
           <div class="rule">
             <span class="rn">2.2</span>
             <div>
-              <b>Ловушки при телепортации</b>
-              <p>Запрещено заманивать игроков в смертоносные ловушки обманом (ТП с целью убийства без предупреждения).</p>
-              <span class="pen pen-mid">⚠️ Бан от 24 часов до 7 дней</span>
+              <b>Капс и раздражающие сообщения</b>
+              <p>Не злоупотребляйте CAPS LOCK, повторяющимися сообщениями и намеренным засорением чата.</p>
+              <span class="pen pen-low">⚠️ Наказание: тайм-аут от 10 минут до 1 часа</span>
             </div>
           </div>
           <div class="rule">
             <span class="rn">2.3</span>
             <div>
-              <b>Багоюз и Дюпы</b>
-              <p>Запрещено использование любых ошибок игры для размножения ресурсов или нанесения вреда серверу. О багах сообщайте администрации.</p>
-              <span class="pen pen-hard">⚠️ Бан на 30 дней или навсегда</span>
+              <b>Оффтоп</b>
+              <p>Публикуйте сообщения в каналах, соответствующих их назначению. Не засоряйте тематические каналы посторонними обсуждениями.</p>
+              <span class="pen pen-low">⚠️ Наказание: тайм-аут от 10 минут</span>
             </div>
           </div>
           <div class="rule">
             <span class="rn">2.4</span>
             <div>
-              <b>Лаг-машины</b>
-              <p>Запрещено создание механизмов из редстоуна, таймеров или мобов, намеренно снижающих производительность (TPS) сервера.</p>
-              <span class="pen pen-mid">⚠️ Снос механизма + бан до 7 дней</span>
+              <b>Реклама</b>
+              <p>Запрещена реклама других серверов, проектов, сайтов и социальных сетей без разрешения администрации.</p>
+              <span class="pen pen-mid">⚠️ Наказание: тайм-аут от 1 дня до 7 дней</span>
+            </div>
+          </div>
+          <div class="rule">
+            <span class="rn">2.5</span>
+            <div>
+              <b>Вредоносные ссылки и файлы</b>
+              <p>Запрещено распространять вирусы, подозрительные файлы, фишинговые ссылки и другие опасные материалы.</p>
+              <span class="pen pen-hard">⚠️ Наказание: тайм-аут до 7 дней или бан</span>
+            </div>
+          </div>
+          <div class="rule">
+            <span class="rn">2.6</span>
+            <div>
+              <b>NSFW-контент</b>
+              <p>Запрещены материалы сексуального характера, контент 18+, шокирующие изображения и материалы, нарушающие правила Discord.</p>
+              <span class="pen pen-hard">⚠️ Наказание: тайм-аут от 1 дня до 7 дней или бан</span>
+            </div>
+          </div>
+          <div class="rule">
+            <span class="rn">2.7</span>
+            <div>
+              <b>Спам упоминаниями</b>
+              <p>Запрещено злоупотреблять @everyone, @here, упоминаниями участников и ролей без необходимости.</p>
+              <span class="pen pen-mid">⚠️ Наказание: тайм-аут от 1 часа до 1 дня</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Tab 3: Чат и Торговля -->
-      <div class="rpanel" role="tabpanel" id="p-chat" aria-labelledby="t-chat">
-        <h3 class="rp-title">・3. Правила чата и торговли</h3>
+      <!-- Tab 3: ПРАВИЛА ГОЛОСОВЫХ КАНАЛОВ -->
+      <div class="rpanel" role="tabpanel" id="p-voice" aria-labelledby="t-voice" hidden>
+        <h3 class="rp-title">・3. ПРАВИЛА ГОЛОСОВЫХ КАНАЛОВ</h3>
         <div class="rgrid">
           <div class="rule">
             <span class="rn">3.1</span>
             <div>
-              <b>Спам и флуд</b>
-              <p>Запрещено отправлять повторяющиеся сообщения, злоупотреблять CAPS LOCK или символьными рисунками.</p>
-              <span class="pen pen-low">⚠️ Мут от 30 до 120 минут</span>
+              <b>Уважение в голосовых чатах</b>
+              <p>Не перебивайте собеседников, не провоцируйте конфликты и уважайте право других участников на общение.</p>
+              <span class="pen pen-mid">⚠️ Наказание: тайм-аут от 1 часа</span>
             </div>
           </div>
           <div class="rule">
             <span class="rn">3.2</span>
             <div>
-              <b>Реклама сторонних проектов</b>
-              <p>Запрещена реклама сторонних серверов Minecraft, Discord-серверов или каналов без разрешения администрации.</p>
-              <span class="pen pen-hard">⚠️ Перманентный бан</span>
+              <b>Микрофон и посторонние звуки</b>
+              <p>Запрещены крики, громкие шумы, намеренный спам микрофоном и звуки, мешающие общению.</p>
+              <span class="pen pen-low">⚠️ Наказание: тайм-аут от 10 минут до 1 часа</span>
             </div>
           </div>
           <div class="rule">
             <span class="rn">3.3</span>
             <div>
-              <b>Продажа за реальные деньги</b>
-              <p>Запрещена продажа игровых предметов, валюты или аккаунтов за рубли между игроками (RMT).</p>
-              <span class="pen pen-hard">⚠️ Бан продавца и покупателя на 30 дней</span>
+              <b>Саундпад и музыка</b>
+              <p>Не злоупотребляйте звуковыми эффектами и музыкой, если они мешают другим участникам.</p>
+              <span class="pen pen-low">⚠️ Наказание: тайм-аут от 10 минут до 1 часа</span>
             </div>
           </div>
           <div class="rule">
             <span class="rn">3.4</span>
             <div>
-              <b>Попрошайничество доната</b>
-              <p>Запрещено выпрашивать ресурсы, донат-привилегии или команды у администрации и других игроков.</p>
-              <span class="pen pen-low">⚠️ Предупреждение / Мут 30 мин</span>
+              <b>Оскорбления и провокации</b>
+              <p>Запрещены травля, угрозы, оскорбления и намеренное создание конфликтов в голосовых каналах.</p>
+              <span class="pen pen-mid">⚠️ Наказание: тайм-аут от 1 часа до 1 дня</span>
+            </div>
+          </div>
+          <div class="rule">
+            <span class="rn">3.5</span>
+            <div>
+              <b>Создание голосовых каналов</b>
+              <p>Если у вас есть доступ к созданию каналов, не злоупотребляйте им и не создавайте каналы для спама или нарушения порядка.</p>
+              <span class="pen pen-mid">⚠️ Наказание: тайм-аут от 1 часа до 1 дня</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Tab 4: Читы и ПО -->
-      <div class="rpanel" role="tabpanel" id="p-cheats" aria-labelledby="t-cheats">
-        <h3 class="rp-title">・4. Читы и сторонний софт</h3>
-        <div class="rgrid">
-          <div class="rule">
-            <span class="rn">4.1</span>
-            <div>
-              <b>Читы и чит-клиенты</b>
-              <p>Использование любых чит-клиентов (Aristois, Wurst, Meteor и др.), включая KillAura, Fly, Speed, Jesus, NoClip строго запрещено.</p>
-              <span class="pen pen-hard">⚠️ Бан от 30 дней до навсегда</span>
-            </div>
-          </div>
-          <div class="rule">
-            <span class="rn">4.2</span>
-            <div>
-              <b>X-Ray и подсветка руд</b>
-              <p>Запрещено использование X-Ray модов, текстурпаков и скриптов для поиска алмазов, сундуков и спавнеров.</p>
-              <span class="pen pen-hard">⚠️ Бан на 14–30 дней с очисткой руд</span>
-            </div>
-          </div>
-          <div class="rule">
-            <span class="rn">4.3</span>
-            <div>
-              <b>Авто-кликеры и боты</b>
-              <p>Запрещены автокликеры для фарма мобов и автоматические боты для копки ресурсов во время AFK.</p>
-              <span class="pen pen-mid">⚠️ Бан от 3 до 7 дней</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 5: Наказания -->
-      <div class="rpanel" role="tabpanel" id="p-pun" aria-labelledby="t-pun">
-        <h3 class="rp-title">・5. Система наказаний сервера</h3>
-        <p class="rp-lead">Администрация сервера применяет наказания согласно тяжести нарушения:</p>
+      <!-- Tab 4: СИСТЕМА НАКАЗАНИЙ -->
+      <div class="rpanel" role="tabpanel" id="p-pun" aria-labelledby="t-pun" hidden>
+        <h3 class="rp-title">・СИСТЕМА НАКАЗАНИЙ</h3>
+        <p class="rp-lead">В зависимости от тяжести нарушения администрация вправе применить одну из следующих мер:</p>
         <ol class="ladder">
-          <li style="--k:1"><span>01</span>Предупреждение (Варн)</li>
-          <li style="--k:2"><span>02</span>Блокировка чата (Мут)</li>
-          <li style="--k:3"><span>03</span>Принудительный кик</li>
-          <li style="--k:4"><span>04</span>Временный бан (до 30 дн.)</li>
-          <li style="--k:5"><span>05</span>Перманентный бан по IP</li>
+          <li style="--k:1"><span>01</span>Предупреждение</li>
+          <li style="--k:2"><span>02</span>Тайм-аут на определённое время</li>
+          <li style="--k:3"><span>03</span>Кик с сервера</li>
+          <li style="--k:4"><span>04</span>Временный бан</li>
+          <li style="--k:5"><span>05</span>Постоянный бан</li>
         </ol>
-        <p class="rp-foot">При повторных нарушениях наказание увеличивается вплоть до полного бана на всех ресурсах проекта.</p>
+        <p class="rp-foot">При повторных или особо серьёзных нарушениях наказание может быть строже. Администрация рассматривает каждую ситуацию индивидуально.</p>
       </div>
     </div>
 
+    <!-- Conclusion Section -->
     <div class="rules-end rv">
       <div>
-        <div class="eyebrow">Честная игра</div>
-        <p>Уважайте товарищей по серверу, стройте красивые базы и развивайтесь вместе с <b>KochBratanTeam</b>.</p>
-        <p>♡ Спасибо, что играете с нами и делаете наш мир ярче!</p>
+        <div class="eyebrow">・ЗАКЛЮЧЕНИЕ</div>
+        <p>Уважайте друг друга, соблюдайте правила и помогайте сохранять дружелюбную атмосферу на <b>KochBratanTeam</b>.</p>
+        <p>♡・Спасибо каждому участнику за понимание и вклад в развитие нашего сообщества!</p>
       </div>
-      <div class="sign">С уважением,<b>Администрация KochBratanTeam</b><span aria-hidden="true">♡</span></div>
+      <div class="sign">С любовью,<b>Команда KochBratanTeam</b><span aria-hidden="true">♡</span></div>
     </div>
   </section>
 
@@ -2366,46 +2472,56 @@ footer {
     <div class="sec-head rv">
       <div>
         <div class="eyebrow">Состав проекта</div>
-        <h2>Команда сервера</h2>
+        <h2>Руководство и команда</h2>
       </div>
+      <p class="sub">Познакомься с создателями проекта или вступай в ряды администрации!</p>
     </div>
 
     <div class="teambox rv">
       <div class="staff">
-        <div class="mem">
+        <!-- Minecraft Server Owner -->
+        <a class="mem" href="https://discord.com/users/1063466125909831681" target="_blank" rel="noopener noreferrer" title="Открыть профиль в Discord">
+          <div class="mem-avatar">⛏️</div>
+          <div class="mem-info">
+            <b>Владелец MC Сервера</b>
+            <small>Владелец Minecraft Сервера</small>
+            <span class="mem-link-pill">Discord Профиль ↗</span>
+          </div>
+        </a>
+
+        <!-- Discord Server Owner -->
+        <a class="mem" href="https://discord.gg/btyGECRV9Y" target="_blank" rel="noopener noreferrer" title="Перейти на Discord сервер">
           <div class="mem-avatar">👑</div>
           <div class="mem-info">
-            <b>RootFirst</b>
-            <small>Создатель & Разработчик</small>
+            <b>Владелец DS Сервера</b>
+            <small>Основатель Discord-сообщества</small>
+            <span class="mem-link-pill">Discord Сервер ↗</span>
           </div>
-        </div>
+        </a>
+
+        <!-- Head Admin -->
         <div class="mem">
           <div class="mem-avatar">🛡️</div>
           <div class="mem-info">
-            <b>BratanAdmin</b>
-            <small>Главный Администратор</small>
+            <b>Главный Администратор</b>
+            <small>Куратор серверов и порядка</small>
           </div>
         </div>
+
+        <!-- Moderator -->
         <div class="mem">
           <div class="mem-avatar">⚔️</div>
           <div class="mem-info">
-            <b>Mod_Legend</b>
-            <small>Куратор Модерации</small>
-          </div>
-        </div>
-        <div class="mem">
-          <div class="mem-avatar">🎨</div>
-          <div class="mem-info">
-            <b>EventMaster</b>
-            <small>Организатор Ивентов</small>
+            <b>Команда Модерации</b>
+            <small>Поддержка участников 24/7</small>
           </div>
         </div>
       </div>
 
       <div class="apply">
         <h4>Хочешь в команду проекта?</h4>
-        <p>Мы всегда рады адекватным билдерам, тестерам и модераторам. Оставь свою заявку в нашем Discord-канале!</p>
-        <a class="btn primary" href="https://discord.gg/kochbratan" target="_blank" rel="noopener noreferrer">
+        <p>Мы открыты для адекватных билдеров, тестеров и модераторов. Оставь заявку в нашем Discord-сообществе!</p>
+        <a class="btn primary" href="https://discord.gg/btyGECRV9Y" target="_blank" rel="noopener noreferrer">
           Подать заявку в Discord <span class="arrow">↗</span>
         </a>
       </div>
@@ -2473,11 +2589,13 @@ footer {
   </div>
   <div class="footer-links">
     <a class="flink" href="#about">Главная</a>
+    <a class="flink" href="https://discord.com/channels/1535356137845690469/1546140945278443541" target="_blank" rel="noopener noreferrer">Новости ↗</a>
+    <a class="flink" href="https://discord.com/channels/1535356137845690469/1546095135576559767" target="_blank" rel="noopener noreferrer">Предложения ↗</a>
     <a class="flink" href="#rules">Правила</a>
     <a class="flink donate-link" href="https://www.donationalerts.com/r/httpsrootfirst" target="_blank" rel="noopener noreferrer">
       DonationAlerts ↗
     </a>
-    <a class="flink" href="https://discord.gg/kochbratan" target="_blank" rel="noopener noreferrer">
+    <a class="flink" href="https://discord.gg/btyGECRV9Y" target="_blank" rel="noopener noreferrer">
       Discord ↗
     </a>
   </div>
@@ -2511,7 +2629,6 @@ if (copyBtn) {
       showToast("IP скопирован: " + SERVER_IP);
       setTimeout(() => { copyBtnText.textContent = "Скопировать"; }, 2500);
     }).catch(() => {
-      // Fallback
       const ta = document.createElement("textarea");
       ta.value = SERVER_IP;
       document.body.appendChild(ta);
@@ -2585,7 +2702,7 @@ toTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// Smooth anchor scrolling
+// Smooth anchor scrolling for hash links
 document.addEventListener("click", e => {
   const a = e.target.closest && e.target.closest("a[href^='#']");
   if (!a) return;
@@ -2723,7 +2840,7 @@ if (!reduce && petals) {
     if (sEl) {
       sEl.textContent = secs;
       sEl.classList.remove("tick");
-      void sEl.offsetWidth; // retrigger animation
+      void sEl.offsetWidth;
       sEl.classList.add("tick");
     }
   }
@@ -2792,10 +2909,7 @@ if (proceedBtn) {
     }
     nickInput.style.borderColor = "";
 
-    // Prepare message string for user's convenience
     const note = `Ник: ${nick} | Донат: ${currentRank} (${currentPrice}₽)`;
-    
-    // Copy note to clipboard so user can just paste into DonationAlerts
     navigator.clipboard.writeText(note).catch(() => {});
     showToast(`✓ Скопировано: «${note}». Открываем DonationAlerts...`);
 
